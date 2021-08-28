@@ -18,6 +18,7 @@ namespace problem_9
       Console.WriteLine($"(25x{a})² + (25x{b})² = (25x{c})²");
       Console.WriteLine($"{25*a}² + {25*b}² = {25*c}²");
       Console.WriteLine($"{25*a} + {25*b} + {25*c} = {25*a + 25*b + 25*c}");
+      Console.WriteLine($"{25*a} x {25*b} x {25*c} = {25*a*25*b*25*c}");
     }
   }
 }
