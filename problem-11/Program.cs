@@ -35,33 +35,33 @@ namespace problem_11
       Console.WriteLine($"Largest Product: {maxProduct} at row={row}, col={col}");
     }
 
-    private static (long,int,int) FindLargestProduct(int size, Matrix matrix)
+    private static (long, int, int) FindLargestProduct(int size, Matrix matrix)
     {
       if (!matrix.IsSquare || size > matrix.Rows)
       {
-        return (0,0,0);
+        return (0, 0, 0);
       }
 
       long largestProduct = 0;
       int startRow = 0;
       int startCol = 0;
-      for (var row=0; row<matrix.Rows-size+1; row++)
+      for (var row = 0; row < matrix.Rows - size + 1; row++)
       {
-        for (var col=0; col<matrix.Cols-size+1; col++)
+        for (var col = 0; col < matrix.Cols - size + 1; col++)
         {
           var subMatrix = matrix.Extract(row, col, size);
           var product = subMatrix.CalcLargestProduct();
-          
+
           if (product > largestProduct)
           {
             largestProduct = product;
             startRow = row;
-            startCol= col;
+            startCol = col;
           }
         }
       }
 
       return (largestProduct, startRow, startCol);
     }
-  } 
+  }
 }
