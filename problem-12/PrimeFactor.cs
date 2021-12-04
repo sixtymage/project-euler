@@ -6,7 +6,7 @@ namespace problem_12
   {
     public long Prime { get; private set; }
 
-    public long Count { get; private set; }
+    public int Count { get; private set; }
 
     public long Product
     {
