@@ -1,19 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace problem_13
+﻿namespace problem_13
 {
   public class Program
   {
     public static void Main(string[] args)
     {
-      var a = new BigDecimal("1234");
-      var b = new BigDecimal("8962");
+      var numbers = LoadNumbers(".\\numbers.txt");
+      var sum = FindSum(numbers);
 
-      var c = a + b;
-      
-      Console.WriteLine($"{a} + {b} = {c}");
+      Console.WriteLine($"Sum: {sum}");
+    }
+
+    private static BigDecimal FindSum(List<BigDecimal> numbers)
+    {
+      var sum = new BigDecimal();
+
+      foreach (var number in numbers)
+      {
+        sum += number;
+      }
+
+      return sum;
+    }
+
+    private static List<BigDecimal> LoadNumbers(string filename)
+    {
+      return File.ReadAllLines(filename).Select(line => new BigDecimal(line)).ToList();
     }
   }
 }
