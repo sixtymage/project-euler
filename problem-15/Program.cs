@@ -1,2 +1,17 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿namespace problem_15
+{
+  public static class Program
+  {
+    public static void Main(string[] args)
+    {
+      const int maxSize = 20;
+
+      for (int latticeSize = 2; latticeSize <= maxSize; latticeSize++)
+      {
+        var lattice = new Lattice(latticeSize);
+        var numPaths = lattice.CalcPaths();
+        Console.WriteLine($"Lattice({latticeSize}): {numPaths}");
+      }
+    }
+  }
+}
